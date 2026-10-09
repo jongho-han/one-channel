@@ -10,3 +10,4 @@
 | 2026-10-10 08:27:54 | WORKLOG.md 추가 | WORKLOG.md 생성, 이전 작업 기록 정리 |
 | 2026-10-10 08:30:12 | push | v3.7 구조 개편·버그 수정 커밋(f5d38a8) 후 GitHub push |
 | 2026-10-10 08:37:14 | push at all (Pages 배포 설정 · CLAUDE.md · WORKLOG) | GitHub Pages 자동 배포 워크플로 추가, CLAUDE.md에 KST·배포 규칙 추가, 커밋·push |
+| 2026-10-10 08:41:24 | 다시 push, Pages 실행 안됨 | 배포 상태 확인: 첫 실행은 Pages 설정 전이라 실패, 재실행 성공. 배포본이 로컬 빌드와 동일함을 확인. WORKLOG push |
