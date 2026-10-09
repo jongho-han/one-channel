@@ -1,0 +1,19 @@
+# MILESTONE
+
+## 완료
+- [x] v3.6 단일 HTML 프로토타입 (52개 화면, T1~T5 템플릿, KWCAG 대응) — 2026-10-10 GitHub 등록
+- [x] v3.7 구조 개편 — 2026-10-10
+  - 단일 파일 → 모듈 분리 (data · state · app · controller · ui · templates · features · screens)
+  - Vite + singlefile 빌드: 배포물은 계속 HTML 한 파일
+  - ESLint(analyze) 오류 0, cSpell 경고 0 (.vscode/settings.json)
+  - jsdom 스모크 테스트 7건 (전 화면 렌더링 + 회귀 버그)
+- [x] v3.7 버그 수정
+  - 단일폼 동의 체크가 큰글씨 전환 후 화면과 상태가 어긋나 동의 없이 진행되던 문제
+  - 큰글씨·기획정보 전환 시 입력 중인 값이 사라지던 문제
+  - 보완서류 제출이 선택 행이 아닌 첫 행을 바꾸고, 파일 없이도 제출되던 문제
+  - 메인 요약 대출 잔액 하드코딩
+
+## 다음 후보
+- [ ] 모달·폼 내부 onclick 직접 바인딩을 액션(data-action) 방식으로 통일
+- [ ] 화면별 단계 진행(T3 전 과정) 테스트 확대
+- [ ] 샘플 데이터 변경(취소·제출)을 Repository 함수로 일원화

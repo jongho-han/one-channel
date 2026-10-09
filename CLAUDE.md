@@ -10,7 +10,7 @@
 - remote push 할때 api key, id/pw, 휴대폰번호, 주민번호 포함 파일 push 절대 금지
 
 ## 코드 품질
-- 변경후 analyze 실행하여 에러 없는지 확인
+- 변경후 analyze 실행하여 에러 없는지 확인 (`npm run analyze`, 테스트는 `npm test`)
 - fix all major linting and avoid minor via analysis options
 - avoid all the cSpell via settings json of .vscode
 - 사용을 완료한 로그 및 디버그 코드는 가급적 제거. 재확인 가능성 높은 경우 주석처리
@@ -31,3 +31,7 @@
 ## Windows Batch (.bat)
 - windows 용 .bat 파일 작성시 ANSI 인코딩 사용
 - .bat 의 echo 에 ( ) 를 쓰면 오류 난다. ^( ^) 로 escape
+
+
+## WORKLOG 규칙
+매 작업완료 시마다 사용자 프롬프트와 작업완료 시간(연월일시분초까지. client device 시각 기준) 간략한 작업내용 기술

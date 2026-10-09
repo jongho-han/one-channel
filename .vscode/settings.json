@@ -1,0 +1,56 @@
+{
+  "cSpell.words": [
+    "activedescendant",
+    "appbar",
+    "beforeinstallprompt",
+    "bigbtn",
+    "chev",
+    "Cpath",
+    "Crect",
+    "Csvg",
+    "dcol",
+    "describedby",
+    "donebox",
+    "fchip",
+    "fsum",
+    "fundtbl",
+    "haspopup",
+    "inputmode",
+    "inrow",
+    "KWCAG",
+    "labelledby",
+    "maxlength",
+    "mlist",
+    "mrow",
+    "navrow",
+    "nums",
+    "Pretendard",
+    "qbtn",
+    "rebal",
+    "recalc",
+    "sbody",
+    "shortbar",
+    "shortbtn",
+    "singlefile",
+    "sumline",
+    "vbank",
+    "webloc",
+    "widgetize",
+    "WORKLOG",
+    "zres"
+  ],
+  "cSpell.ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "package-lock.json",
+    "src/data/menu-spec.json"
+  ],
+  "cSpell.ignoreRegExpList": [
+    "[가-힣]+"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.useFlatConfig": true,
+  "files.encoding": "utf8"
+}
