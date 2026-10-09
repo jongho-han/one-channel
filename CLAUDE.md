@@ -27,7 +27,7 @@
 - markdown 에 소스코드는 넣지 말아라. 실제 소스와 중복이고 업데이트 안된다
 - 모든 문서는 필수, 핵심만 간결하게 정리
 - 완료된 항목이 있으면 @MILESTONE.md 마일스톤 업데이트
-- 메뉴정의서 원본은 manual.xlsx. 화면·기능 변경 시 해당 행 비고와 개정이력도 함께 갱신하고 src/data/menu-spec.json 과 일치시킬 것
+- 메뉴정의서 원본은 docs/메뉴정의서.xlsx. 화면·기능 변경 시 해당 행 비고와 개정이력도 함께 갱신하고 src/data/menu-spec.json 과 일치시킬 것
 
 ## Windows Batch (.bat)
 - windows 용 .bat 파일 작성시 ANSI 인코딩 사용

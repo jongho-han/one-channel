@@ -28,7 +28,7 @@
 | styles | 전체 스타일 |
 
 ## 화면 추가 순서
-1. 메뉴정의서 `manual.xlsx`에 항목 추가 후 `src/data/menu-spec.json`에 같은 내용 반영 (메뉴정의서가 원본)
+1. 메뉴정의서 `docs/메뉴정의서.xlsx`에 항목 추가 후 `src/data/menu-spec.json`에 같은 내용 반영 (메뉴정의서가 원본)
 2. 화면유형에 맞는 `src/screens/*` 설정 추가
 3. 전용 동작이 필요하면 `src/features`에 모듈 추가
 4. `npm run analyze`, `npm test` 통과 확인
