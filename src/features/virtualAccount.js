@@ -2,7 +2,7 @@ import { APP } from '../core/config.js';
 import { randomDigits } from '../core/format.js';
 import { icon } from '../ui/icons.js';
 
-/* 보험료 납입 (SL-PM-01): 가상계좌 발급 --------------------------------------- */
+/* 보험료 납입 (PM-01): 가상계좌 발급 --------------------------------------- */
 export const PAY_BY_ACCOUNT = '내 계좌에서 출금';
 export const PAY_BY_VIRTUAL = '가상계좌로 이체';
 export const VIRTUAL_ACCOUNT_BANKS = {          // 발급 가능 은행 → 가상계좌번호 형식(샘플)

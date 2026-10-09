@@ -93,9 +93,9 @@ function renderTabBar() {
   const { page, screenId } = state.route;
   const tabs = [
     { label: '홈',        icon: 'home',   action: 'data-action="nav" data-page="home"',      active: page === 'home' },
-    { label: '내 계약',    icon: 'shield', action: 'data-action="open" data-id="SL-CT-01"',   active: screenId === 'SL-CT-01' },
-    { label: '보험금청구', icon: 'claim',  action: 'data-action="open" data-id="SL-PY-01"',   active: screenId === 'SL-PY-01' },
-    { label: '증명서',     icon: 'cert',   action: 'data-action="open" data-id="SL-CF-02"',   active: Boolean(screenId?.startsWith('SL-CF')) },
+    { label: '내 계약',    icon: 'shield', action: 'data-action="open" data-id="CT-01"',   active: screenId === 'CT-01' },
+    { label: '보험금청구', icon: 'claim',  action: 'data-action="open" data-id="PY-01"',   active: screenId === 'PY-01' },
+    { label: '증명서',     icon: 'cert',   action: 'data-action="open" data-id="CF-02"',   active: Boolean(screenId?.startsWith('CF-')) },
     { label: '전체메뉴',   icon: 'menu',   action: 'data-action="toggle-all-menu"',            active: page === 'all' },
   ];
   $('#tabbar').innerHTML = each(tabs, tab => `<button class="${tab.active ? 'on' : ''}" ${tab.action}${tab.active ? ' aria-current="page"' : ''}>${icon(tab.icon)}${tab.label}</button>`);

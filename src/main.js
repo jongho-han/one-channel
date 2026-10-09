@@ -29,7 +29,7 @@ function boot() {
   render();
 }
 
-/* 테스트·시연용 진입점 (개발자 도구에서 App.openScreen('SL-CT-01') 등) */
+/* 테스트·시연용 진입점 (개발자 도구에서 App.openScreen('CT-01') 등) */
 window.App = { state, render, navigate, openScreen, setLargeText, rerenderScreen };
 
 boot();

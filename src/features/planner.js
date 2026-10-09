@@ -18,7 +18,8 @@ export function plannerPanel(screen) {
     ['업무파트', escapeHtml(screen.part)],
     ['법규·유의', escapeHtml(screen.regulation)],
     ['iM 대응수준', imStatusBadge(escapeHtml(screen.imStatus))],
-  ];
+    screen.note && ['비고', escapeHtml(screen.note)],
+  ].filter(Boolean);
   return `<div class="spec"><h2>${icon('info')}기획정보 · ${screen.id}</h2><dl>${each(rows, ([key, value]) => `<dt>${key}</dt><dd>${value}</dd>`)}</dl></div>`;
 }
 

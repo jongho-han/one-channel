@@ -25,7 +25,7 @@ export function noticeSettingsBody(flow) {
     <div class="agree checks e-consent">
       <label><input type="checkbox" id="eConsent" ${eConsent ? 'checked' : ''}><span>${NOTICE_E_CONSENT_TEXT}</span></label>
     </div>
-    <p class="note-sm">휴대폰·이메일 주소는 <button class="link" data-action="open" data-id="SL-MY-01">개인정보변경</button>에서 바꿀 수 있습니다.</p>
+    <p class="note-sm">휴대폰·이메일 주소는 <button class="link" data-action="open" data-id="MY-01">개인정보변경</button>에서 바꿀 수 있습니다.</p>
   </div>
   <div class="card"><h2>안내장별 수신 방법</h2>
     <div class="tbl-wrap plain"><table class="tbl min-460">
@@ -43,7 +43,7 @@ export function noticeSettingsBody(flow) {
 }
 
 
-/* 안내장수신설정 (SL-MY-02): 수신 방법 ↔ 전자적방법 수신동의 연동
+/* 안내장수신설정 (MY-02): 수신 방법 ↔ 전자적방법 수신동의 연동
    ① 모바일·이메일을 고르면 수신동의 자동 체크
    ② 수신동의 해제 시 확인 팝업 → 예: 모바일·이메일 → 우편(자택) / 아니오·X: 그대로 */
 export function bindNoticeSettings(root, flow) {

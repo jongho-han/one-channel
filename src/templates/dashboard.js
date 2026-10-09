@@ -47,11 +47,11 @@ function contractCard(contract) {
 /** 계약 성격에 맞는 바로가기 버튼 */
 function contractShortcuts(contract) {
   return [
-    ['계약상세', 'SL-CT-02'],
-    contract.isVariable  && ['펀드 수익률', 'SL-CT-03'],
-    contract.isUniversal && ['자유납입', 'SL-PM-04'],
-    loanAvailable(contract) > 0 && [`대출 가능 ${Math.round(loanAvailable(contract) / 10000).toLocaleString()}만원`, 'SL-LN-02'],
-    ['실손', '어린이', '암'].includes(contract.kind) && ['보험금 청구', 'SL-PY-01'],
-    ['증명서', 'SL-CF-02'],
+    ['계약상세', 'CT-02'],
+    contract.isVariable  && ['펀드 수익률', 'CT-03'],
+    contract.isUniversal && ['자유납입', 'PM-04'],
+    loanAvailable(contract) > 0 && [`대출 가능 ${Math.round(loanAvailable(contract) / 10000).toLocaleString()}만원`, 'LN-02'],
+    ['실손', '어린이', '암'].includes(contract.kind) && ['보험금 청구', 'PY-01'],
+    ['증명서', 'CF-02'],
   ].filter(Boolean);
 }

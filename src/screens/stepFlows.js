@@ -13,7 +13,7 @@ const contractChoices = (filter, valueOf = () => '') => CONTRACTS.filter(filter)
 }));
 
 export const STEP_FLOWS = {
-  'SL-MY-05': {
+  'MY-05': {
     intro: { tone: 'warn', title: '고객확인 재이행이 필요합니다', desc: '특정금융정보법에 따라 보험금 지급·대출 등 금융거래 전 고객 정보를 주기적으로 확인합니다. 재확인 기한: 2026.11.30' },
     fields: [
       { id: 'job', label: '직업', type: 'select', options: ['회사원', '공무원', '자영업', '전문직', '주부', '학생', '무직', '기타'] },
@@ -24,7 +24,7 @@ export const STEP_FLOWS = {
     agree: ['입력한 정보가 사실과 다르지 않음을 확인합니다.'],
     done: '고객확인이 완료되었습니다. 다음 재확인 기한은 2029.10.02입니다.' },
 
-  'SL-PY-01': {
+  'PY-01': {
     pick: {
       label: '청구할 계약을 선택하세요',
       onPick: (flow, contractNo) => {   // 고른 계약의 피보험자를 입력 단계에서 미리 선택
@@ -46,9 +46,9 @@ export const STEP_FLOWS = {
     agree: ['[필수] 개인(신용)정보 수집·이용·제공 동의', '[필수] 민감정보(질병·상해 정보) 처리 동의', '[필수] 고유식별정보 처리 동의'],
     warn: '보험사기는 보험사기방지특별법에 따라 10년 이하 징역 또는 5천만원 이하 벌금에 처해질 수 있습니다. 사실과 다른 청구를 하지 마세요.',
     done: '보험금 청구가 접수되었습니다. 심사 결과는 카카오 알림톡으로 알려드립니다.', receiptPrefix: 'C2610',
-    doneNext: ['청구 진행 조회', 'SL-PY-02'] },
+    doneNext: ['청구 진행 조회', 'PY-02'] },
 
-  'SL-PY-04': {
+  'PY-04': {
     pick: { label: '받으실 보험금을 선택하세요', items: () => [
       { key: 'm', title: '만기보험금 (일부) · (무)iM 유니버설저축보험', sub: '발생일 2026.04.20', value: '1,500,000원' },
       { key: 'd', title: '분할보험금 · (무)iM 든든한 종신보험', sub: '발생일 2026.07.15', value: '350,000원' }] },
@@ -61,7 +61,7 @@ export const STEP_FLOWS = {
     warn: '이자소득이 있는 경우 소득세법에 따라 세금이 원천징수됩니다.',
     done: '지급 신청이 완료되었습니다. 영업일 기준 1일 이내 입금됩니다.', receiptPrefix: 'P2610' },
 
-  'SL-PY-05': {
+  'PY-05': {
     pick: { label: '인출할 계약을 선택하세요', items: () => contractChoices(c => c.isUniversal || c.isVariable, c => (c.isUniversal ? '인출가능 5,210,000원' : '인출가능 4,700,000원')) },
     intro: { tone: 'info', title: '올해 남은 인출 횟수 11회 (연 12회)', desc: '1회 인출 수수료 2,000원 · 최소 10만원부터 1만원 단위' },
     fields: [
@@ -74,7 +74,7 @@ export const STEP_FLOWS = {
     warn: '중도인출하면 적립금이 줄어들어 만기보험금·해지환급금이 감소하며, 보장 금액이 줄어들 수 있습니다.',
     done: '중도인출 신청이 완료되었습니다. 영업일 기준 1일 이내 입금됩니다.', receiptPrefix: 'W2610' },
 
-  'SL-PY-07': {
+  'PY-07': {
     pick: { label: '받으실 보험금을 선택하세요', items: () => [
       { key: 'a', title: '휴면보험금 · (무)iM 유니버설저축보험', sub: '발생일 2023.04.15 · 중도보험금', value: '412,350원' },
       { key: 'b', title: '휴면 배당금 · (유)iM 교육보험(소멸)', sub: '발생일 2021.11.02', value: '38,120원' }] },
@@ -85,7 +85,7 @@ export const STEP_FLOWS = {
     },
     done: '미수령보험금 지급 신청이 완료되었습니다.', receiptPrefix: 'P2610' },
 
-  'SL-PY-09': {
+  'PY-09': {
     pick: { label: '연금 계약을 선택하세요', items: () => contractChoices(c => c.isAnnuity, () => '월 1,032,000원 예정') },
     fields: [
       { id: 'cycle', label: '지급 주기', type: 'radio', options: ['매월', '3개월', '6개월', '매년'] },
@@ -99,7 +99,7 @@ export const STEP_FLOWS = {
     warn: '연금소득은 연령에 따라 3.3%~5.5% 세율로 원천징수되며, 사적연금 연 1,500만원 초과 시 종합과세 또는 분리과세를 선택할 수 있습니다.',
     done: '연금 지급 신청이 완료되었습니다. 첫 연금은 연금개시일에 입금됩니다.', receiptPrefix: 'A2610' },
 
-  'SL-PM-01': {
+  'PM-01': {
     pick: { label: '납입할 계약을 선택하세요', items: () => contractChoices(c => c.status === '정상' || c.status === '납입유예', c => formatWon(c.premium)) },
     fields: [
       { id: 'cnt', label: '납입 회차', type: 'radio', options: ['이번 회차(10월분)', '2개월 선납', '3개월 선납'] },
@@ -119,7 +119,7 @@ export const STEP_FLOWS = {
     doneGuide: values => (isVirtualPayment(values) ? '입금이 확인되면 납입 완료를 알려드립니다.' : ''),
     receiptPrefix: 'R2610' },
 
-  'SL-PM-04': {
+  'PM-04': {
     pick: { label: '유니버설 계약을 선택하세요', items: () => contractChoices(c => c.isUniversal, () => '추가납입 잔여 한도 4,800,000원') },
     fields: [
       { id: 'kind', label: '처리 구분', type: 'radio', options: ['추가납입', '납입 일시중지 해제', '납입 일시중지 연장'] },
@@ -128,7 +128,7 @@ export const STEP_FLOWS = {
     warn: '납입을 일시중지하면 매월 위험보험료 등 월대체보험료가 적립금에서 차감되며, 적립금이 부족하면 계약이 해지될 수 있습니다.',
     done: '자유납입 신청이 처리되었습니다.', receiptPrefix: 'R2610' },
 
-  'SL-CH-02': {
+  'CH-02': {
     pick: { label: '감액완납할 계약을 선택하세요', items: () => contractChoices(c => c.kind === '종신', () => '현재 사망보험금 1억원') },
     intro: { tone: 'info', title: '감액완납이란', desc: '지금까지 쌓인 해지환급금으로 보험료를 모두 낸 것으로 처리하고, 보장 금액을 줄여 계약을 유지하는 방법입니다. 이후 보험료를 내지 않습니다.' },
     fields: [],
@@ -137,7 +137,7 @@ export const STEP_FLOWS = {
     agree: ['특약 소멸 및 보장 축소 내용을 확인했습니다.'],
     done: '감액완납 변경이 완료되었습니다. 변경된 보험증권을 이메일로 보내드립니다.', receiptPrefix: 'H2610' },
 
-  'SL-CH-03': {
+  'CH-03': {
     pick: { label: '계약을 선택하세요', items: () => contractChoices(c => c.kind === '종신', () => '특약 3개') },
     fields: [{ id: 'riders', label: '해지할 특약', type: 'checks', options: ['재해사망특약 (월 8,200원)', '암진단특약 (월 21,300원)', '입원일당특약 (월 6,900원)'] }],
     calc: values => {
@@ -150,7 +150,7 @@ export const STEP_FLOWS = {
     agree: ['변경 전후 보장 내용을 비교해 확인했습니다.'],
     done: '특약 해지가 완료되었습니다.', receiptPrefix: 'H2610' },
 
-  'SL-CH-04': {
+  'CH-04': {
     pick: { label: '해지할 계약을 선택하세요', items: () => contractChoices(c => c.surrender > 0, c => '예상 ' + formatWon(c.surrender)) },
     retain: true,
     fields: [
@@ -167,7 +167,7 @@ export const STEP_FLOWS = {
     agree: ['[필수] 해지 시 불이익(보장 소멸, 재가입 제한, 원금 손실 가능성)을 설명 듣고 이해했습니다.', '[필수] 해지 후에는 계약을 되살릴 수 없음을 확인했습니다.'],
     done: '해지 신청이 완료되었습니다. 환급금은 영업일 기준 1일 이내 입금됩니다.', receiptPrefix: 'X2610' },
 
-  'SL-CH-06': {
+  'CH-06': {
     pick: { label: '철회할 계약을 선택하세요', items: () => [{ key: 'new', title: '(무)iM 튼튼치아보험', sub: '청약일 2026.09.20 · 철회 기한 2026.10.20', value: '반환 31,200원' }] },
     intro: { tone: 'ok', title: '청약철회권(금융소비자보호법)', desc: '보험증권을 받은 날부터 15일, 청약한 날부터 30일 이내에 불이익 없이 철회할 수 있습니다. 낸 보험료는 전액 돌려드립니다.' },
     fields: [
@@ -176,7 +176,7 @@ export const STEP_FLOWS = {
     calc: () => [['납입 보험료', '31,200원'], ['반환 보험료', '31,200원', true], ['환불 예정일', '2026.10.06']],
     done: '청약 철회가 접수되었습니다. 2026.10.06까지 환불됩니다.', receiptPrefix: 'Q2610' },
 
-  'SL-CH-05': {
+  'CH-05': {
     pick: {
       label: '연금개시 나이를 바꿀 계약을 선택하세요',
       items: () => contractChoices(c => c.isAnnuity, c => `현재 ${c.annuityAge}세 개시 (${c.annuityDate})`),
@@ -200,7 +200,7 @@ export const STEP_FLOWS = {
     warn: '연금개시를 늦추면 적립 기간이 길어져 연금액이 늘어나고, 앞당기면 줄어듭니다. 연금이 개시된 뒤에는 바꿀 수 없습니다.',
     done: '연금개시연도 변경이 완료되었습니다.', receiptPrefix: 'H2610' },
 
-  'SL-CH-07': {
+  'CH-07': {
     pick: { label: '연금 계약을 선택하세요', items: () => contractChoices(c => c.isAnnuity, c => '연금개시 ' + c.annuityDate) },
     fields: ANNUITY_OPTION_FIELDS,
     compact: true,                       // 선택 항목이 많아 2열 · 버튼형으로 촘촘하게
@@ -209,7 +209,7 @@ export const STEP_FLOWS = {
     warn: '연금 개시 이후에는 연금 유형을 바꿀 수 없습니다. 예상 연금액은 현재 공시이율 기준 예시이며 확정된 금액이 아닙니다.',
     done: '연금개시유형 변경이 완료되었습니다.', receiptPrefix: 'H2610' },
 
-  'SL-CH-10': {
+  'CH-10': {
     pick: { label: '계약을 선택하세요', items: () => contractChoices(() => true, c => '현재 수익자 ' + c.beneficiary) },
     fields: [
       { id: 'target', label: '변경할 수익자', type: 'radio', options: ['사망수익자', '만기수익자', '기타(장해·입원) 수익자'] },
@@ -221,7 +221,7 @@ export const STEP_FLOWS = {
     agree: ['피보험자에게 동의 요청 알림톡을 보내는 데 동의합니다.'],
     done: '수익자 변경이 접수되었습니다. 피보험자 동의가 완료되면 변경이 확정됩니다.', receiptPrefix: 'H2610' },
 
-  'SL-LN-02': {
+  'LN-02': {
     pick: { render: renderLoanPickStep, bind: bindLoanPickStep, validate: validateLoanPick, describe: describeLoanRequest, summary: loanResultSection },
     intro: { tone: 'ok', title: '보험계약대출은 신용점수에 영향이 없습니다', desc: '해지하지 않고 해지환급금 범위에서 바로 받을 수 있습니다. 중도상환수수료 없음.' },
     fields: [{ id: 'acct', label: '입금 계좌', type: 'account' }],
@@ -230,7 +230,7 @@ export const STEP_FLOWS = {
     agree: ['[필수] 보험계약대출 상품설명서를 확인했습니다.', '[필수] 보험계약대출 약정에 전자서명합니다.'],
     done: '대출이 실행되었습니다. 신청 금액이 바로 입금됩니다.', receiptPrefix: 'L2610' },
 
-  'SL-LN-04': {
+  'LN-04': {
     pick: { label: '상환할 대출을 선택하세요', items: () => [{ key: 'l1', title: '보험계약대출 · (무)iM 든든한 종신보험', sub: '대출일 2025.11.20 · 연 4.30%', value: '잔액 3,000,000원' }] },
     fields: [
       { id: 'kind', label: '상환 구분', type: 'radio', options: ['일부 상환', '전액 상환', '이자만 납입'] },

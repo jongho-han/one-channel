@@ -1,6 +1,6 @@
 export const APP = {
   version: 'v3.7',
-  specVersion: 'v2.0',                 // 기준 메뉴정의서 버전
+  specVersion: 'v3.7',                 // 기준 메뉴정의서 버전
   today: '2026.10.02',                 // 샘플 데이터 기준일
   storageKeys: { largeText: 'im_big' },
   shortcut: {

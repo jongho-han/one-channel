@@ -108,7 +108,7 @@ function stepSign(screen) {
 function stepDone(screen, config, flow) {
   flow.receiptNo ??= receiptNo(config.receiptPrefix || 'R2610');
   const totals = config.calc ? config.calc(flow.values, flow.pick).filter(([, , isTotal]) => isTotal) : [];
-  const [nextLabel, nextScreenId] = config.doneNext || ['내 계약 보기', 'SL-CT-01'];
+  const [nextLabel, nextScreenId] = config.doneNext || ['내 계약 보기', 'CT-01'];
 
   return `
   ${doneCard({

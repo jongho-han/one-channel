@@ -47,9 +47,9 @@ test('메뉴정의서의 모든 화면이 열린다', () => {
   assert.deepEqual(errors, []);
 });
 
-test('단일폼 동의 체크가 큰글씨 전환 후에도 유지된다 (SL-PM-02)', () => {
+test('단일폼 동의 체크가 큰글씨 전환 후에도 유지된다 (PM-02)', () => {
   login();
-  window.App.openScreen('SL-PM-02');
+  window.App.openScreen('PM-02');
   const agree = $('[data-agree="0"]');
   agree.checked = true;
   agree.dispatchEvent(new window.Event('change', { bubbles: true }));
@@ -58,17 +58,17 @@ test('단일폼 동의 체크가 큰글씨 전환 후에도 유지된다 (SL-PM-
   assert.deepEqual([...window.App.state.screen.flow.agreed], [0]);
 });
 
-test('입력 중인 값이 큰글씨 전환 후에도 유지된다 (SL-MY-05)', () => {
+test('입력 중인 값이 큰글씨 전환 후에도 유지된다 (MY-05)', () => {
   login();
-  window.App.openScreen('SL-MY-05');
+  window.App.openScreen('MY-05');
   $('#work').value = '테스트상사';
   click($('[data-action="toggle-large-text"]'));
   assert.equal($('#work').value, '테스트상사');
 });
 
-test('보완서류는 파일이 없으면 제출되지 않는다 (SL-PY-02)', () => {
+test('보완서류는 파일이 없으면 제출되지 않는다 (PY-02)', () => {
   login();
-  window.App.openScreen('SL-PY-02');
+  window.App.openScreen('PY-02');
   click($('.cell-btn[data-index="0"]'));
   click($('[data-action="submit-documents"]'));
   assert.ok($('#uplErr').textContent);
@@ -81,9 +81,9 @@ test('메인 요약의 대출 잔액은 계약 데이터로 계산된다', () =>
   assert.match($('.my-summary').textContent, /300만원/);
 });
 
-test('보험계약대출 확인 단계는 예정 계약 카드를 보여준다 (SL-LN-02)', () => {
+test('보험계약대출 확인 단계는 예정 계약 카드를 보여준다 (LN-02)', () => {
   login();
-  window.App.openScreen('SL-LN-02');
+  window.App.openScreen('LN-02');
   const input = $('#loanAmount');
   input.value = '1,000,000';
   input.dispatchEvent(new window.Event('input', { bubbles: true }));

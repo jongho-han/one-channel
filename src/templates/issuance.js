@@ -33,7 +33,7 @@ export function renderIssuance(screen) {
   </div>`;
 }
 
-/** 비로그인 서류 내려받기 (SL-EX-01·02) */
+/** 비로그인 서류 내려받기 (CS-01·02) */
 function renderFormDownloads(screen) {
   const tone = { '필수': 'r', '안내': 'b' };
   return `
@@ -49,7 +49,7 @@ function renderFormDownloads(screen) {
   </div></div>
   <div class="navrow">
     <button class="btn lg" data-action="nav" data-page="home">홈으로</button>
-    <button class="btn pri lg" data-action="open" data-id="SL-PY-01">모바일로 바로 청구하기</button>
+    <button class="btn pri lg" data-action="open" data-id="PY-01">모바일로 바로 청구하기</button>
   </div>`;
 }
 

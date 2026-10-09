@@ -8,7 +8,7 @@ import { announce, openModal, toast } from '../ui/overlay.js';
 import { infoBox, summaryTiles } from '../ui/widgets.js';
 import { activeFunds, selectedVariableContract, variableContractTabs } from './variableContract.js';
 
-/* 변액보험 펀드변경 (SL-CH-01) + 적합성진단 -------------------------
+/* 변액보험 펀드변경 (CH-01) + 적합성진단 -------------------------
    변경하기 → 진단 필요 판단
      조건1) 마지막 적합성진단 후 3년 경과   조건2) 변경 후 포트폴리오 위험이 현재 투자성향 범위를 넘음
    → 둘 다 아니면 바로 인증 / 하나라도 맞으면 안내 후 적합성진단

@@ -5,7 +5,7 @@ import { renderField, validateFields } from '../form/formEngine.js';
 import { announce } from '../ui/overlay.js';
 import { summaryTiles } from '../ui/widgets.js';
 
-/* 보험계약대출 (SL-LN-02): 신청금액을 이율이 낮은 계약부터 나눠 배정 ----- */
+/* 보험계약대출 (LN-02): 신청금액을 이율이 낮은 계약부터 나눠 배정 ----- */
 const LOAN_MIN_AMOUNT = 100000;
 export const loanAvailable   = contract => contract.loanLimit - contract.loan;
 const formatRate      = rate => `연 ${(rate * 100).toFixed(2)}%`;

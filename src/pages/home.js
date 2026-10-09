@@ -61,7 +61,7 @@ function mySummaryCard() {
       <div><dt>이번 달 보험료</dt><dd class="num">${(monthlyPremium / 10000).toFixed(1)}만원</dd></div>
       <div><dt>대출 잔액</dt><dd class="num">${totalLoan ? `${Math.round(totalLoan / 10000).toLocaleString()}만원` : '없음'}</dd></div>
     </dl>
-    <button class="btn pri block" data-action="open" data-id="SL-CT-01">계약종합현황 보기</button>
+    <button class="btn pri block" data-action="open" data-id="CT-01">계약종합현황 보기</button>
   </div>`;
 }
 
@@ -73,7 +73,7 @@ function guestLoginCard() {
     <div class="auth-grid">
       ${each(LOGIN_METHODS, method => `<button class="auth-opt" data-action="login" data-method="${method.name}"><b>${method.name}</b><small>${method.desc}</small></button>`)}
     </div>
-    <div class="foot"><span>로그인 없이 이용</span><button data-action="open" data-id="SL-EX-01">청구서류 내려받기</button></div>
+    <div class="foot"><span>로그인 없이 이용</span><button data-action="open" data-id="CS-01">청구서류 내려받기</button></div>
   </div>`;
 }
 
@@ -173,7 +173,7 @@ function homeNoticeSection() {
       <div class="tel num">1588-4770</div>
       <p>평일 09:00~18:00 · 사고보험금 접수 24시간(모바일)</p>
       <div class="row">
-        <button class="btn sm" data-action="open" data-id="SL-EX-01">청구서류 받기</button>
+        <button class="btn sm" data-action="open" data-id="CS-01">청구서류 받기</button>
       </div>
     </div>
   </div></section>`;

@@ -13,11 +13,11 @@ import { infoBox, linkButtons, statusChip, summaryTiles } from '../ui/widgets.js
 /* T2 목록 + 상세 ---------------------------------------------------- */
 const PERIODS = ['1개월', '3개월', '6개월', '1년'];
 const isNumericColumn = column => /금액|잔액|액|이자|세$|수익률|비율/.test(column);
-/** 보험금 찾기(SL-PY-03)의 '신청' 열 → 이어서 열 신청 화면 */
-const claimScreenFor = label => (label.startsWith('미수령') ? 'SL-PY-07' : 'SL-PY-04');
+/** 보험금 찾기(PY-03)의 '신청' 열 → 이어서 열 신청 화면 */
+const claimScreenFor = label => (label.startsWith('미수령') ? 'PY-07' : 'PY-04');
 
 export function renderListDetail(screen) {
-  if (screen.id === 'SL-CT-02') return renderContractDetail();
+  if (screen.id === 'CT-02') return renderContractDetail();
 
   const config = LIST_SCREENS[screen.id];
   const list = state.screen.list;
@@ -132,21 +132,21 @@ function rowFollowUp(screenId, config, rowIndex) {
   const cells = config.rows[rowIndex];
   const status = cells[config.columns.findIndex(isStatusColumn)];
 
-  if (screenId === 'SL-PY-02' && status === '보완서류 요청') return `
+  if (screenId === 'PY-02' && status === '보완서류 요청') return `
     ${infoBox('danger', 'alert', '<b>보완서류가 필요합니다 (요청일 2026.09.26)</b>진료비 세부내역서 1부를 올려 주시면 심사를 이어서 진행합니다.', 'my-14')}
     <label class="file-drop" for="upl">${icon('upload')}<b>보완서류 사진 찍기 또는 파일 선택</b><small>JPG·PNG·PDF, 1건당 10MB 이하</small><input type="file" id="upl" multiple accept="image/*,.pdf"></label>
     <div class="files mt-8" id="fl-upl"></div>
     <span class="err" id="uplErr" role="alert"></span>
     <button class="btn pri block mt-12" data-action="submit-documents">보완서류 제출</button>`;
 
-  if (screenId === 'SL-PY-02' && status === '지급완료') return infoBox('ok', 'check',
+  if (screenId === 'PY-02' && status === '지급완료') return infoBox('ok', 'check',
     '지급 결정 내용에 이의가 있으시면 재심사를 요청할 수 있습니다. <button class="link" data-action="toast" data-message="재심사 요청은 실제 서비스에서 접수됩니다.">재심사 요청</button>', 'mt-14');
 
-  if ((screenId === 'SL-PY-06' && status === '접수') || (screenId === 'SL-LN-03' && status === '심사중')) return `
+  if ((screenId === 'PY-06' && status === '접수') || (screenId === 'LN-03' && status === '심사중')) return `
     ${infoBox('warn', 'info', '처리 전인 신청은 지금 취소할 수 있습니다.', 'mt-14')}
     <button class="btn block danger mt-10" data-action="cancel-request" data-index="${rowIndex}">신청 취소</button>`;
 
-  if (screenId === 'SL-PY-03') {
+  if (screenId === 'PY-03') {
     const label = cells[config.columns.indexOf('신청')];
     return `<button class="btn pri block mt-14" data-action="open" data-id="${claimScreenFor(label)}">${label}</button>`;
   }
@@ -195,7 +195,7 @@ export function submitDocuments() {
   toast('보완서류를 제출했습니다. 알림톡으로 결과를 알려드립니다.');
 }
 
-/* 계약조회 (SL-CT-02): 계약 탭 + 보장내용 */
+/* 계약조회 (CT-02): 계약 탭 + 보장내용 */
 function renderContractDetail() {
   const list = state.screen.list;
   list.contractTab ??= 0;
@@ -231,6 +231,6 @@ function renderContractDetail() {
       <dt>납입 회차</dt><dd class="num">${contract.paidCount}회 / ${contract.totalCount}${typeof contract.totalCount === 'number' ? '회' : ''}</dd>
       <dt>자동이체</dt><dd>${contract.account} · 매월 ${contract.debitDay}</dd>
     </dl>
-    ${linkButtons([['계약관계자 변경', 'SL-CH-10'], ['자동이체 변경', 'SL-PM-02'], ['보험증권 재발급', 'SL-CF-03']], { spacing: 'mt-16', primaryIndex: 2 })}
+    ${linkButtons([['계약관계자 변경', 'CH-10'], ['자동이체 변경', 'PM-02'], ['보험증권 재발급', 'CF-03']], { spacing: 'mt-16', primaryIndex: 2 })}
   </div>`;
 }

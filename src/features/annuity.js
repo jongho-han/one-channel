@@ -3,7 +3,7 @@ import { formatWon } from '../core/format.js';
 import { CONTRACTS, insuredLabel } from '../data/customerRepository.js';
 import { state } from '../state/store.js';
 
-/* 보험기간/연금개시연도 변경 (SL-CH-05): 연금 계약 카드를 라디오로 선택 ------ */
+/* 보험기간/연금개시연도 변경 (CH-05): 연금 계약 카드를 라디오로 선택 ------ */
 export const ANNUITY_AGE_RANGE = [55, 80];
 const ANNUITY_AGE_CHOICES = [55, 60, 62, 65, 70, 75, 80];
 
@@ -72,7 +72,7 @@ export function validateAnnuityPick(root, flow) {
 }
 
 
-/* 연금개시유형 선택/변경 (SL-CH-07) 선택조건 ------------------------------------
+/* 연금개시유형 선택/변경 (CH-07) 선택조건 ------------------------------------
    연금유형에 따라 일부 항목은 값이 고정됨(lockRules) → 고정 항목은 다른 선택지를 숨기고 고정값만 보여줌 */
 export const NOT_APPLICABLE = '해당없음';
 export const ANNUITY_OPTION_FIELDS = [
