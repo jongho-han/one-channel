@@ -35,3 +35,8 @@
 
 ## WORKLOG 규칙
 매 작업완료 시마다 사용자 프롬프트와 작업완료 시간(연월일시분초까지. client device 시각 기준) 간략한 작업내용 기술
+- 시각은 KST(Asia/Seoul) 기준. 웹/클라우드 세션은 `TZ=Asia/Seoul date` 로 확인
+
+## 배포
+- main 에 push 하면 GitHub Actions 가 analyze·test·build 후 GitHub Pages 로 자동 배포
+- 확인 주소: https://jongho-han.github.io/one-channel/
