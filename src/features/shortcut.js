@@ -1,4 +1,5 @@
 import { APP } from '../core/config.js';
+import { saveFile } from '../core/download.js';
 import { each, isNarrowScreen, when } from '../core/dom.js';
 import { openModal, toast } from '../ui/overlay.js';
 
@@ -47,12 +48,7 @@ export function downloadShortcut(kind) {
     ? `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n<plist version="1.0"><dict><key>URL</key><string>${url}</string></dict></plist>\n`
     : `[InternetShortcut]\r\nURL=${url}\r\nIconIndex=0\r\n`;
 
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(new Blob([body], { type: isMac ? 'application/xml' : 'application/octet-stream' }));
-  link.download = name + (isMac ? '.webloc' : '.url');
-  document.body.appendChild(link);
-  link.click();
-  setTimeout(() => { URL.revokeObjectURL(link.href); link.remove(); }, 500);
+  saveFile(name + (isMac ? '.webloc' : '.url'), body, isMac ? 'application/xml' : 'application/octet-stream');
   toast('바로가기 파일을 내려받았습니다. 바탕화면으로 옮겨 주세요.');
 }
 

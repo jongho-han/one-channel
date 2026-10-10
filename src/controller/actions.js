@@ -2,6 +2,7 @@ import { refresh } from '../app/render.js';
 import { goBack, navigate, openScreen, toggleAllMenu } from '../app/router.js';
 import { $, focusElement } from '../core/dom.js';
 import { MENU_TREE, SCREEN_BY_ID } from '../data/menuRepository.js';
+import { downloadContractDocument } from '../features/contractDocuments.js';
 import { showFundPhase, submitSuitability } from '../features/fund.js';
 import { setLargeText } from '../features/largeText.js';
 import { downloadShortcut, openShortcutGuide, shortcut } from '../features/shortcut.js';
@@ -71,6 +72,7 @@ const ACTIONS = {
   'select-row':        ({ index }) => { state.screen.list.selectedRow = Number(index); rerenderScreen(); },
   'close-row':         () => { state.screen.list.selectedRow = null; rerenderScreen(); },
   'contract-tab':      ({ index }) => { state.screen.list.contractTab = Number(index); rerenderScreen(); },
+  'download-contract-doc': ({ no, doc }) => downloadContractDocument(no, doc),
   'variable-tab':      ({ no }) => {
     state.variableNo = no;
     if (state.screen.flow) Object.assign(state.screen.flow, { fundRatios: null, rebalance: false, phase: 'edit' });   // 펀드변경: 계약을 바꾸면 입력 초기화
