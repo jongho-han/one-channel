@@ -105,9 +105,9 @@ test('계약조회에서 계약별 약관·안내장 PDF를 내려받는다 (CT-
   window.URL.revokeObjectURL = () => {};
   window.HTMLAnchorElement.prototype.click = function () { saved.name = this.download; };
 
-  click($('[data-action="contract-tab"][data-index="1"]'));   // 변액연금: 변액 운용현황 안내장 포함
+  click($('[data-action="contract-tab"][data-index="1"]'));   // 변액연금도 약관 · 보험상품안내장 각 1건
   const buttons = [...window.document.querySelectorAll('[data-action="download-contract-doc"]')];
-  assert.deepEqual(buttons.map(button => button.dataset.doc), ['terms', 'variable-2026q3', 'annual-2025', 'annual-2024']);
+  assert.deepEqual(buttons.map(button => button.dataset.doc), ['terms', 'product-notice']);
 
   click(buttons[0]);
   assert.equal(saved.name, '2020-0456789_보험약관.pdf');

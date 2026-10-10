@@ -21,11 +21,11 @@ export function contractDocumentsCard(contract) {
           <td class="r"><button class="btn sm" data-action="download-contract-doc" data-no="${contract.no}" data-doc="${doc.id}">${icon('doc')}PDF<span class="sr-only"> ${escapeHtml(doc.title)} 내려받기</span></button></td>
         </tr>`)}</tbody>
     </table></div>
-    <p class="note-sm">약관은 가입 당시 기준이며, 안내장은 기준일 시점의 계약 내용입니다.</p>
+    <p class="note-sm">약관과 보험상품안내장은 가입 당시 기준입니다.</p>
   </div>`;
 }
 
-/** 서류 종류별 본문 (시연용 샘플 문구) */
+/** 서류 종류별 본문 (시연용 샘플 문구) — 안내장은 가입 당시 계약 내용 */
 function documentBody(contract, doc) {
   if (doc.kind === '약관') {
     return [
@@ -35,10 +35,9 @@ function documentBody(contract, doc) {
     ];
   }
   return [
-    `계약상태: ${contract.status}`,
-    `월 보험료: ${formatWon(contract.premium)}  ·  납입 회차: ${contract.paidCount}회`,
-    `납입보험료 합계: ${formatWon(contract.paidSum)}  ·  해지환급금: ${formatWon(contract.surrender)}`,
-    contract.loan ? `보험계약대출 잔액: ${formatWon(contract.loan)}` : '보험계약대출 잔액: 없음',
+    `계약일: ${contract.startDate}  ·  보험기간: ${contract.endDate}  ·  납입기간: ${contract.payEnd}`,
+    `월 보험료: ${formatWon(contract.premium)}  ·  총 납입횟수: ${contract.totalCount}${typeof contract.totalCount === 'number' ? '회' : ''}`,
+    ...contract.coverage.map(([type, desc, amount]) => `${type} — ${desc}: ${amount}`),
   ];
 }
 
