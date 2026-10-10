@@ -96,3 +96,22 @@ test('보험계약대출 확인 단계는 예정 계약 카드를 보여준다 (
   assert.match($('#sbody').textContent, /대출 실행 예정 계약/);
   assert.deepEqual(errors, []);
 });
+
+test('계약조회에서 계약별 약관·안내장 PDF를 내려받는다 (CT-02)', async () => {
+  login();
+  window.App.openScreen('CT-02');
+  let saved = null;
+  window.URL.createObjectURL = blob => { saved = { blob }; return 'blob:test'; };
+  window.URL.revokeObjectURL = () => {};
+  window.HTMLAnchorElement.prototype.click = function () { saved.name = this.download; };
+
+  click($('[data-action="contract-tab"][data-index="1"]'));   // 변액연금: 변액 운용현황 안내장 포함
+  const buttons = [...window.document.querySelectorAll('[data-action="download-contract-doc"]')];
+  assert.deepEqual(buttons.map(button => button.dataset.doc), ['terms', 'variable-2026q3', 'annual-2025', 'annual-2024']);
+
+  click(buttons[0]);
+  assert.equal(saved.name, '2020-0456789_보험약관.pdf');
+  assert.equal(saved.blob.type, 'application/pdf');
+  assert.match(await saved.blob.text(), /^%PDF-1\.4[\s\S]*%%EOF\n$/);
+  assert.deepEqual(errors, []);
+});

@@ -16,5 +16,8 @@
 | 2026-10-10 08:50:46 | push | 변경 사항 없음 확인(원격과 동일), WORKLOG 기록만 push |
 | 2026-10-10 08:53:09 | docs/메뉴정의서.xlsx로 넣어줘 | 루트 manual.xlsx를 docs/메뉴정의서.xlsx로 이동, README·CLAUDE.md 경로 수정, 커밋·push |
 | 2026-10-10 09:15:13 | git pull | 원격 변경 없음(Already up to date) |
+| 2026-10-10 09:22:42 | 계약조회 화면에서 각 계약별 약관, 안내장을 다운받을 수 있도록 해줘 | CT-02에 「약관·안내장」 카드 추가(약관·변액 분기 안내장·연간 계약안내장 PDF 다운로드), 서류 Repository·PDF 생성·공통 다운로드 모듈 분리, 메뉴정의서·menu-spec.json 갱신, 테스트 1건 추가 |
+| 2026-10-10 09:23:38 | push | 계약조회 약관·안내장 다운로드 커밋(cba4ed2) 후 claude/blissful-fermat-8108x2 브랜치 push |
 | 2026-10-10 09:28:21 | git pull | main 변경 없음. 원격 신규 브랜치 claude/blissful-fermat-8108x2 확인 |
 | 2026-10-10 09:28:32 | push | WORKLOG 기록 커밋·push |
+| 2026-10-10 09:29:40 | claude/blissful-fermat-8108x2 push | 브랜치를 main에 병합(WORKLOG 충돌 해결), analyze 오류 0·테스트 8건 통과 확인 후 main push |

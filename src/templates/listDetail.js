@@ -1,6 +1,7 @@
 import { $, $$, each, escapeHtml, focusElement, when } from '../core/dom.js';
 import { formatWon } from '../core/format.js';
 import { CONTRACTS, USER, insuredLabel } from '../data/customerRepository.js';
+import { contractDocumentsCard } from '../features/contractDocuments.js';
 import { SCREEN_BY_ID } from '../data/menuRepository.js';
 import { bindFileList } from '../form/formEngine.js';
 import { rerenderScreen } from '../pages/screen.js';
@@ -195,7 +196,7 @@ export function submitDocuments() {
   toast('보완서류를 제출했습니다. 알림톡으로 결과를 알려드립니다.');
 }
 
-/* 계약조회 (CT-02): 계약 탭 + 보장내용 */
+/* 계약조회 (CT-02): 계약 탭 + 보장내용 + 약관·안내장 */
 function renderContractDetail() {
   const list = state.screen.list;
   list.contractTab ??= 0;
@@ -232,5 +233,6 @@ function renderContractDetail() {
       <dt>자동이체</dt><dd>${contract.account} · 매월 ${contract.debitDay}</dd>
     </dl>
     ${linkButtons([['계약관계자 변경', 'CH-10'], ['자동이체 변경', 'PM-02'], ['보험증권 재발급', 'CF-03']], { spacing: 'mt-16', primaryIndex: 2 })}
-  </div>`;
+  </div>
+  ${contractDocumentsCard(contract)}`;
 }
