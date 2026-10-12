@@ -7,8 +7,8 @@ export const INVEST_PROFILES = [
   { level: 5, name: '공격투자형', minGrade: 1, maxScore: 99 },
 ];
 export const FUND_GRADE_NAMES = { 1: '매우높은위험', 2: '높은위험', 3: '다소높은위험', 4: '보통위험', 5: '낮은위험', 6: '매우낮은위험' };
-/* 고객의 현재 적합성진단 */
-export const SUITABILITY = { profile: '위험중립형', diagnosedAt: '2024.02.20', failedOn: null };
+/* 고객의 현재 적합성진단 (샘플: 3년 경과 → 펀드변경 시 재진단 필요) */
+export const SUITABILITY = { profile: '위험중립형', diagnosedAt: '2023.08.14', failedOn: null };
 /* [질문, [[보기, 점수], ...]] */
 export const SUITABILITY_QUESTIONS = [
   ['이 보험의 투자 기간은 얼마나 생각하시나요?', [['1년 미만', 1], ['1년 ~ 3년', 2], ['3년 ~ 5년', 3], ['5년 ~ 10년', 4], ['10년 이상', 5]]],
