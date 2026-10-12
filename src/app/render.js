@@ -15,7 +15,7 @@ const PAGES = {
   screen: () => renderScreenPage(state.route.screenId),
 };
 
-/** 화면 설정(큰글씨 · 기획정보)만 바꿔 다시 그림: 입력 중인 값은 유지 */
+/** 화면 설정(큰글씨)만 바꿔 다시 그림: 입력 중인 값은 유지 */
 export function refresh() {
   saveScreenInputs();
   render();

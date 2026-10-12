@@ -1,7 +1,7 @@
 import { APP } from '../core/config.js';
-import { $, $$, each, escapeHtml, focusElement, scrollToTop, when } from '../core/dom.js';
+import { $, $$, each, escapeHtml, focusElement, scrollToTop } from '../core/dom.js';
 import { formatWon, nextDay, parseYmd } from '../core/format.js';
-import { FUND_GRADE_NAMES, INVEST_PROFILES, SUITABILITY, SUITABILITY_DEMO_DATES, SUITABILITY_QUESTIONS } from '../data/fundRepository.js';
+import { FUND_GRADE_NAMES, INVEST_PROFILES, SUITABILITY, SUITABILITY_QUESTIONS } from '../data/fundRepository.js';
 import { rerenderScreen } from '../pages/screen.js';
 import { state } from '../state/store.js';
 import { announce, openModal, toast } from '../ui/overlay.js';
@@ -71,20 +71,7 @@ export function fundAllocationBody(flow) {
     </div>
   </div>
   ${infoBox('warn', 'alert', '변액보험은 투자 실적에 따라 원금 손실이 발생할 수 있습니다. 마지막 적합성진단 후 3년이 지났거나, 변경 후 편입비율이 투자성향보다 위험하면 적합성진단을 먼저 진행합니다.', 'mt-14')}
-  ${when(state.ui.showPlanner, suitabilityDemoControls())}
   <div id="frm"></div>`;
-}
-
-/** 기획정보 보기를 켰을 때만: 시연용 진단일 바꾸기 */
-function suitabilityDemoControls() {
-  return `
-  <div class="demo-box mt-14">
-    <b>프로토타입 시연 설정</b>
-    <label for="demoDiag">최근 적합성진단일</label>
-    <select class="inp sm" id="demoDiag" data-demo-diag>
-      ${each(SUITABILITY_DEMO_DATES, ([date, label]) => `<option value="${date}" ${date === SUITABILITY.diagnosedAt ? 'selected' : ''}>${date} (${label})</option>`)}
-    </select>
-  </div>`;
 }
 
 /** 변경 후 포트폴리오 위험등급을 실시간으로 보여줌 */
@@ -271,8 +258,6 @@ export function bindFundExtras(root, flow) {
   }));
   const rebalance = $('#rebal', root);
   if (rebalance) rebalance.onchange = () => { flow.rebalance = rebalance.checked; };
-  const demo = $('[data-demo-diag]', root);
-  if (demo) demo.onchange = () => { SUITABILITY.diagnosedAt = demo.value; SUITABILITY.failedOn = null; rerenderScreen(); };
   updateRiskLine(root, flow);
 }
 

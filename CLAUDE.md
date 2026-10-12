@@ -17,7 +17,7 @@ iM라이프 사이버창구 기획 검토용 프로토타입 (메뉴정의서 52
 - 렌더링은 HTML 문자열 → `innerHTML`. 사용자 표시값은 `core/dom.js` 의 `escapeHtml` 사용
 - 클릭은 요소의 `data-action="이름"` + `data-*` 를 `controller/actions.js` 의 `ACTIONS` 맵 한 곳에서 처리. 새 버튼은 onclick 대신 여기에 액션 추가
 - 화면 정의의 원천은 `src/data/menu-spec.json` (메뉴정의서 행: id·depth1~3·screenType·authLevel 등). `pages/screen.js` 가 `screenType`(T1 대시보드·T2 목록·T3 단계형·T4 단일폼·T5 발급)으로 `templates/*` 의 render/bind 를 고르고, 화면별 세부 설정은 `screens/*`(stepFlows·changeForms·certificates·listScreens)에서 화면 id 키로 조회
-- 큰글씨·기획정보 전환은 `refresh()` 로 입력값 저장(`saveScreenInputs`) 후 다시 그림. 입력 상태 유실 회귀 주의
+- 큰글씨 전환은 `refresh()` 로 입력값 저장(`saveScreenInputs`) 후 다시 그림. 입력 상태 유실 회귀 주의
 - 화면 추가 순서: 메뉴정의서 → `menu-spec.json` → `screens/*` 설정 → 필요 시 `features/*` 모듈 → 테스트 (README 참조)
 
 ## 커뮤니케이션
