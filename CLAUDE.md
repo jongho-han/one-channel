@@ -1,5 +1,25 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+iM라이프 사이버창구 기획 검토용 프로토타입 (메뉴정의서 52개 화면). 프레임워크 없는 바닐라 JS(ES 모듈) + Vite. 데이터는 모두 샘플, 인증·거래는 시뮬레이션.
+
+## 명령
+- `npm run dev` 개발 서버 / `npm run build` → `dist/index.html` 단일 파일 (vite-plugin-singlefile, CSS·JS 인라인. 더블클릭으로 열려야 함)
+- `npm run analyze` ESLint / `npm test` 빌드 후 `node --test` 실행
+- 테스트 하나만: `npm run build && node --test --test-name-pattern="CT-02" tests/smoke.test.js`
+- 테스트는 소스가 아닌 **빌드 결과 `dist/index.html`** 을 jsdom에 올려 검사하므로 소스 수정 후 반드시 재빌드. 테스트에서는 `window.App`(state·render·openScreen 등)으로 화면을 연다
+
+## 아키텍처 (흐름)
+- 진입 `src/main.js` → `controller/events.js` 전역 이벤트 바인딩 → `app/render.js` 가 셸 + `state.route.page`(home·all·login·screen)별 페이지 렌더
+- 상태는 `state/store.js` 의 전역 `state` 객체 하나. 화면 이동 시 `state.screen` 은 `freshScreenState()` 로 초기화 (`flow`: T3~T5 진행, `list`: T2)
+- 라우팅 `app/router.js`: `openScreen(id)` 는 `authLevel` 이 A0 가 아니고 미로그인이면 로그인으로 보낸 뒤 이어서 연다. 화면 전환 시 h1 초점 이동·문서 제목 갱신 (KWCAG)
+- 렌더링은 HTML 문자열 → `innerHTML`. 사용자 표시값은 `core/dom.js` 의 `escapeHtml` 사용
+- 클릭은 요소의 `data-action="이름"` + `data-*` 를 `controller/actions.js` 의 `ACTIONS` 맵 한 곳에서 처리. 새 버튼은 onclick 대신 여기에 액션 추가
+- 화면 정의의 원천은 `src/data/menu-spec.json` (메뉴정의서 행: id·depth1~3·screenType·authLevel 등). `pages/screen.js` 가 `screenType`(T1 대시보드·T2 목록·T3 단계형·T4 단일폼·T5 발급)으로 `templates/*` 의 render/bind 를 고르고, 화면별 세부 설정은 `screens/*`(stepFlows·changeForms·certificates·listScreens)에서 화면 id 키로 조회
+- 큰글씨·기획정보 전환은 `refresh()` 로 입력값 저장(`saveScreenInputs`) 후 다시 그림. 입력 상태 유실 회귀 주의
+- 화면 추가 순서: 메뉴정의서 → `menu-spec.json` → `screens/*` 설정 → 필요 시 `features/*` 모듈 → 테스트 (README 참조)
+
 ## 커뮤니케이션
 - 사용자가 영어로 물어봐도 한국어로 대답
 - /compact 후에는 반드시 이 지침을 명시적으로 리로드 해야 한다

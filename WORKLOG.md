@@ -23,3 +23,8 @@
 | 2026-10-10 09:29:40 | claude/blissful-fermat-8108x2 push | 브랜치를 main에 병합(WORKLOG 충돌 해결), analyze 오류 0·테스트 8건 통과 확인 후 main push |
 | 2026-10-10 09:32:35 | 안내장은 계약시 해당 보험계약 안내장, 문구 수정 및 보험상품안내장 하나만 표시 | CT-02 서류를 약관·보험상품안내장(가입 당시 기준) 각 1건으로 변경, 안내장 PDF 본문을 가입 당시 계약 내용으로 수정, 안내 문구·테스트·menu-spec.json·메뉴정의서(비고·개정이력)·MILESTONE 갱신 |
 | 2026-10-10 09:33:48 | push | 계약조회 보험상품안내장 변경 커밋·main push |
+| 2026-10-12 10:36:18 | git pull | 원격 변경 없음(Already up to date) |
+| 2026-10-12 10:41:00 | git pull | 원격 변경 없음(Already up to date) |
+| 2026-10-12 11:19:11 | /init | CLAUDE.md 보완: 프로젝트 개요, 명령(단일 테스트 실행·테스트가 dist 빌드본 대상임), 아키텍처 흐름(렌더·상태·라우팅·data-action·menu-spec.json→템플릿) 추가 |
+| 2026-10-12 11:19:34 | git pull | 원격 변경 없음(Already up to date) |
+| 2026-10-12 11:19:51 | push | CLAUDE.md 보완·WORKLOG 커밋, main push |
