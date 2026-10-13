@@ -37,3 +37,4 @@
 | 2026-10-12 15:15:39 | push | 이용안내 문서·적합성진단 샘플일·검색 키워드·.gitignore 커밋(a8a30b4) 후 main push |
 | 2026-10-13 09:14:24 | <nav class="lnb"> 폭을 260px로 변경 | 좌측 메뉴(lnb) 열 폭 230px → 260px (.sub-layout 그리드 첫 열) |
 | 2026-10-13 09:15:14 | push | 최신 main 병합(WORKLOG 충돌 해결), analyze 0·테스트 8건 통과 확인 후 claude/blissful-fermat-8108x2 push |
+| 2026-10-13 09:15:51 | main에 병합하고 push 해줘 | claude/blissful-fermat-8108x2 (lnb 폭 260px) 를 main에 fast-forward 병합·push |
