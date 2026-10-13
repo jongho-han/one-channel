@@ -15,7 +15,7 @@ export const APP = {
     ['금융소비자보호'],
     ['보험사기신고'],       'https://www.imlifeins.co.kr/BB/BB_C020.do', true],
     ['위법계약해지요구권'],
-    ['전자민원'],
+    ['전자민원'],       'https://www.imlifeins.co.kr/BB/BB_B010.do', true],
   ],
   features: {
     hideGuestLoginOnMobile: true,       // v3.0: 모바일 메인에서 로그인 박스 숨김
