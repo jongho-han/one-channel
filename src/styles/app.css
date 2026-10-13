@@ -351,14 +351,14 @@ table.tbl.min-520 { min-width: 520px; }
 /* 7-1. 화면 틀: 좌측 메뉴(LNB) + 제목 */
 .sub-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); align-items: start; gap: 28px; }
 .sub-main { min-width: 0; }
-.lnb { position: sticky; top: 96px; padding: 16px 10px; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); }
+.lnb { position: sticky; top: 96px; padding: 16px 8px; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); }
 .lnb h2 { margin: 4px 10px 10px; font-size: 17px; color: var(--navy); }
-/* 2Depth(.g) = 굵은 소제목 · 3Depth(button) = 들여쓰고 왼쪽 안내선으로 하위 메뉴임을 표시 */
+/* 2Depth(.g) = 굵은 소제목 · 3Depth(button) = 들여쓰고 왼쪽 안내선으로 하위 메뉴임을 표시 (메뉴명은 한 줄 고정) */
 .lnb-group + .lnb-group { margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--line2); }
-.lnb .g { display: flex; align-items: center; gap: 7px; margin: 4px 10px 6px; font-size: 15px; font-weight: 750; color: var(--navy); }
+.lnb .g { display: flex; align-items: center; gap: 7px; margin: 4px 8px 6px; font-size: 15px; font-weight: 750; color: var(--navy); }
 .lnb .g::before { content: ""; flex: none; width: 4px; height: 15px; border-radius: 2px; background: var(--brand-fill); }
-.lnb-sub { margin: 0 4px 2px 21px; padding-left: 8px; border-left: 2px solid var(--line); }
-.lnb button { position: relative; display: block; width: 100%; padding: 6px 10px; border: 0; border-radius: 8px; background: none; text-align: left; font-size: 13.5px; color: var(--sub); }
+.lnb-sub { margin: 0 0 2px 12px; padding-left: 8px; border-left: 2px solid var(--line); }
+.lnb button { position: relative; display: block; width: 100%; padding: 6px 8px; border: 0; border-radius: 8px; background: none; text-align: left; font-size: 13.5px; letter-spacing: -0.03em; white-space: nowrap; color: var(--sub); }
 .lnb button:hover { background: var(--line2); color: var(--ink); }
 .lnb button.on { background: var(--brand-soft); color: var(--brand-ink); font-weight: 700; }
 .lnb button.on::before { content: ""; position: absolute; left: -10px; top: 7px; bottom: 7px; width: 2px; border-radius: 1px; background: var(--brand-fill); }

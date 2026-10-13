@@ -38,3 +38,5 @@
 | 2026-10-13 09:14:24 | <nav class="lnb"> 폭을 260px로 변경 | 좌측 메뉴(lnb) 열 폭 230px → 260px (.sub-layout 그리드 첫 열) |
 | 2026-10-13 09:15:14 | push | 최신 main 병합(WORKLOG 충돌 해결), analyze 0·테스트 8건 통과 확인 후 claude/blissful-fermat-8108x2 push |
 | 2026-10-13 09:15:51 | main에 병합하고 push 해줘 | claude/blissful-fermat-8108x2 (lnb 폭 260px) 를 main에 fast-forward 병합·push |
+| 2026-10-13 09:19:45 | 좌측 메뉴 「보험료 자동대출납입 신청/취소」 강제 줄바꿈 → 한 줄 표시 | lnb 폭 260px 유지, 안쪽 여백(lnb·들여쓰기·버튼) 축소, 메뉴명 자간 -0.03em·줄바꿈 금지. 52개 메뉴 선택(굵게) 상태 모두 한 줄 확인, analyze 0·테스트 8건 통과 |
+| 2026-10-13 09:20:41 | main에 병합하고 push | 좌측 메뉴 한 줄 표시 커밋 후 main fast-forward 병합·push |
