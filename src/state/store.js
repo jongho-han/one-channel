@@ -5,7 +5,6 @@ export const state = {
   isLoggedIn: false,
   pendingScreenId: null,                     // 로그인 후 이어서 열 화면
   ui: {
-    showPlanner: false,                      // 기획정보 패널
     largeText: false,                        // 큰글씨모드
     openMenuSections: new Set(),             // 전체메뉴에서 펼친 2Depth
   },

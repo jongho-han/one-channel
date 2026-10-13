@@ -1,8 +1,7 @@
 import { documentTitle } from '../app/router.js';
-import { $, each, escapeHtml, when } from '../core/dom.js';
+import { $, each, escapeHtml } from '../core/dom.js';
 import { SCREEN_SUBTITLES } from '../data/homeContent.js';
 import { MENU_GROUPS, MENU_TREE, SCREEN_BY_ID } from '../data/menuRepository.js';
-import { plannerPanel } from '../features/planner.js';
 import { readFieldValues } from '../form/formEngine.js';
 import { CERTIFICATES } from '../screens/certificates.js';
 import { CHANGE_FORMS } from '../screens/changeForms.js';
@@ -26,7 +25,7 @@ const TEMPLATES = {
   T5: { render: renderIssuance,   bind: bindIssuance   },
 };
 
-/* 화면 틀: 좌측 메뉴 · 경로 · 제목 · 본문 · 기획정보 ------------------ */
+/* 화면 틀: 좌측 메뉴 · 경로 · 제목 · 본문 ---------------------------- */
 export function renderScreenPage(screenId) {
   const screen = SCREEN_BY_ID[screenId];
   const template = TEMPLATES[screen.screenType];
@@ -41,7 +40,6 @@ export function renderScreenPage(screenId) {
         <div class="badges">${screenAuthBadge(screen)}<span class="bdg">이용대상 · ${escapeHtml(screen.target)}</span></div>
       </div>
       <div id="sbody">${template.render(screen)}</div>
-      ${when(state.ui.showPlanner, plannerPanel(screen))}
     </div>
   </div></div>`;
 
@@ -82,7 +80,7 @@ function screenAuthBadge(screen) {
 /** 입력 폼이 있는 화면유형별 설정 */
 const FORM_CONFIGS = { T3: STEP_FLOWS, T4: CHANGE_FORMS, T5: CERTIFICATES };
 
-/** 화면을 통째로 다시 그리기 전에 입력 중인 값을 진행 상태에 저장 (큰글씨 · 기획정보 전환 시 입력 유지) */
+/** 화면을 통째로 다시 그리기 전에 입력 중인 값을 진행 상태에 저장 (큰글씨 전환 시 입력 유지) */
 export function saveScreenInputs() {
   const { page, screenId } = state.route;
   const flow = state.screen.flow;

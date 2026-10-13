@@ -1,4 +1,3 @@
-import { refresh } from '../app/render.js';
 import { goBack, navigate, openScreen, toggleAllMenu } from '../app/router.js';
 import { $, focusElement } from '../core/dom.js';
 import { MENU_TREE, SCREEN_BY_ID } from '../data/menuRepository.js';
@@ -47,12 +46,6 @@ const ACTIONS = {
   'suit-submit':       () => submitSuitability(),
   'fund-compare':      () => showFundPhase('compare'),
   'fund-sign':         () => chooseSignMethod(SCREEN_BY_ID[state.route.screenId], () => completeSingleForm(state.screen.flow)),
-
-  'toggle-planner':    (data, element) => {
-    state.ui.showPlanner = !state.ui.showPlanner;
-    element.setAttribute('aria-pressed', state.ui.showPlanner);
-    refresh();
-  },
 
   /* 바로가기 */
   'open-shortcut':     () => openShortcutGuide(),

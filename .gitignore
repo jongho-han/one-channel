@@ -1,3 +1,6 @@
 .DS_Store
 node_modules/
 dist/
+
+# 이전 버전 단일 HTML (로컬 보관용)
+iM라이프_사이버창구_프로토타입_v3.6.html
