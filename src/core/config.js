@@ -13,9 +13,9 @@ export const APP = {
     ['신용정보활용체제',   'https://www.imlifeins.co.kr/BE/BE_A032.do', true],
     ['고객권리안내',       'https://www.imlifeins.co.kr/BE/BE_A031.do', true],
     ['금융소비자보호'],
-    ['보험사기신고'],
+    ['보험사기신고',       'https://www.imlifeins.co.kr/BB/BB_C020.do', true],
     ['위법계약해지요구권'],
-    ['전자민원'],
+    ['전자민원',           'https://www.imlifeins.co.kr/BB/BB_B010.do', true],
   ],
   features: {
     hideGuestLoginOnMobile: true,       // v3.0: 모바일 메인에서 로그인 박스 숨김
