@@ -355,7 +355,7 @@ table.tbl.min-520 { min-width: 520px; }
 
 /* 7. 업무 화면 ============================================================ */
 /* 7-1. 화면 틀: 좌측 메뉴(LNB) + 제목 */
-.sub-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); align-items: start; gap: 28px; }
+.sub-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); align-items: start; gap: 28px; }
 .sub-main { min-width: 0; }
 .lnb { position: sticky; top: 96px; padding: 16px 10px; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); }
 .lnb h2 { margin: 4px 10px 10px; font-size: 17px; color: var(--navy); }
