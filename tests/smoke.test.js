@@ -116,9 +116,13 @@ test('계약조회에서 계약별 약관·안내장 PDF를 내려받는다 (CT-
   assert.deepEqual(errors, []);
 });
 
-test('하단 개인정보처리방침은 회사 홈페이지로 새 창 연결된다', () => {
-  const link = [...window.document.querySelectorAll('#footer a')].find(a => a.textContent.includes('개인정보처리방침'));
-  assert.equal(link?.href, 'https://www.imlifeins.co.kr/BE/BE_A030_2.do');
-  assert.equal(link.target, '_blank');
-  assert.match(link.rel, /noopener/);
+test('하단 이용 안내 링크는 회사 홈페이지로 새 창 연결된다', () => {
+  const links = Object.fromEntries([...window.document.querySelectorAll('#footer nav a')].map(a => [a.firstChild.textContent, a]));
+  assert.equal(links['개인정보처리방침']?.href, 'https://www.imlifeins.co.kr/BE/BE_A030_2.do');
+  assert.equal(links['신용정보활용체제']?.href, 'https://www.imlifeins.co.kr/BE/BE_A032.do');
+  assert.equal(links['고객권리안내']?.href, 'https://www.imlifeins.co.kr/BE/BE_A031.do');
+  for (const link of Object.values(links)) {
+    assert.equal(link.target, '_blank');
+    assert.match(link.rel, /noopener/);
+  }
 });
