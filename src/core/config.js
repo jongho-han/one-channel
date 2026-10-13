@@ -10,8 +10,8 @@ export const APP = {
   /** 하단 이용 안내 [이름, 회사 홈페이지 URL(없으면 링크 없음), 강조 여부] */
   footerLinks: [
     ['개인정보처리방침',   'https://www.imlifeins.co.kr/BE/BE_A030_2.do', true],
-    ['신용정보활용체제',   'https://www.imlifeins.co.kr/BE/BE_A032.do'],
-    ['고객권리안내',       'https://www.imlifeins.co.kr/BE/BE_A031.do'],
+    ['신용정보활용체제',   'https://www.imlifeins.co.kr/BE/BE_A032.do', true],
+    ['고객권리안내',       'https://www.imlifeins.co.kr/BE/BE_A031.do', true],
     ['금융소비자보호'],
     ['보험사기신고'],
     ['위법계약해지요구권'],

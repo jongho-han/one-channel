@@ -45,3 +45,5 @@
 | 2026-10-13 09:28:59 | main에 병합하고 push | 개인정보처리방침 링크 커밋 후 main fast-forward 병합·push |
 | 2026-10-13 09:31:43 | 하단 신용정보활용체제(BE_A032)·고객권리안내(BE_A031) 링크 | 하단 이용 안내를 config.js footerLinks 목록으로 일원화(URL 있으면 새 창 링크, 개인정보처리방침만 강조), 두 항목 링크 연결, 테스트 갱신, 메뉴정의서 개정이력 추가. analyze 0·테스트 9건 통과 |
 | 2026-10-13 09:32:39 | main에 병합하고 push | 하단 이용 안내 링크 커밋 후 main fast-forward 병합·push |
+| 2026-10-13 09:38:22 | 신용정보활용체제, 고객권리안내 에 class="strong" 추가 | 하단 두 링크도 강조(class="strong", 굵은 남색) 표시 — config.js footerLinks 강조 여부 true. analyze 0·테스트 9건 통과 |
+| 2026-10-13 09:38:45 | main에 병합하고 push | 하단 링크 강조 커밋 후 main fast-forward 병합·push |
