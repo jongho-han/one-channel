@@ -38,7 +38,7 @@ test('메뉴정의서의 모든 화면이 열린다', () => {
   login();
   click($('[data-action="toggle-all-menu"]'));
   const allIds = [...new Set([...window.document.querySelectorAll('#amList [data-id]')].map(button => button.dataset.id))];
-  assert.equal(allIds.length, 52);
+  assert.equal(allIds.length, 53);
   for (const id of allIds) {
     window.App.openScreen(id);
     assert.equal(window.App.state.route.screenId, id, id);
@@ -127,4 +127,24 @@ test('하단 이용 안내 링크는 회사 홈페이지로 새 창 연결된다
     assert.equal(link.target, '_blank');
     assert.match(link.rel, /noopener/);
   }
+});
+
+test('보험계약관리 메뉴 순서와 연금전환 사전신청 계산 (CH-11)', () => {
+  login();
+  window.App.openScreen('CH-11');
+  const lnb = [...window.document.querySelectorAll('.lnb button')].map(button => button.textContent.trim());
+  const start = lnb.indexOf('계약관계자변경');
+  assert.deepEqual(lnb.slice(start, start + 11), ['계약관계자변경', '보험기간/연금개시연도 변경', '연금개시유형 선택/변경', '연금전환 사전신청',
+    '변액보험 펀드변경/관리', '감액완납', '특약해지', '보험계약 해지', '대리청구인 지정/등록', '금융정보보호 신청/해제', '청약철회']);
+
+  const picks = [...window.document.querySelectorAll('[data-action="pick"]')];
+  assert.equal(picks.length, 2, '종신·변액종신 계약만');
+  click(picks[0]);
+  click($('#next'));
+  const age = $('#age');
+  age.value = age.options[2].value;   // 60세
+  age.dispatchEvent(new window.Event('change', { bubbles: true }));
+  click($('#next'));
+  assert.match($('#main').textContent, /매월 예상 연금액\(예시\)/);
+  assert.deepEqual(errors, []);
 });

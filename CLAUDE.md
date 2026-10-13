@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-iM라이프 사이버창구 기획 검토용 프로토타입 (메뉴정의서 52개 화면). 프레임워크 없는 바닐라 JS(ES 모듈) + Vite. 데이터는 모두 샘플, 인증·거래는 시뮬레이션.
+iM라이프 사이버창구 기획 검토용 프로토타입 (메뉴정의서 53개 화면). 프레임워크 없는 바닐라 JS(ES 모듈) + Vite. 데이터는 모두 샘플, 인증·거래는 시뮬레이션.
 
 ## 명령
 - `npm run dev` 개발 서버 / `npm run build` → `dist/index.html` 단일 파일 (vite-plugin-singlefile, CSS·JS 인라인. 더블클릭으로 열려야 함)
