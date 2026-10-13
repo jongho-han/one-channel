@@ -7,6 +7,9 @@ export const APP = {
     name: 'iM라이프 사이버창구',
     url: 'https://www.imlifeins.co.kr/cyber/main.do',   // 운영 시 실제 메인 URL
   },
+  links: {
+    privacyPolicy: 'https://www.imlifeins.co.kr/BE/BE_A030_2.do',   // 개인정보처리방침(회사 홈페이지)
+  },
   features: {
     hideGuestLoginOnMobile: true,       // v3.0: 모바일 메인에서 로그인 박스 숨김
     compactShortcutBarOnMobile: true,   // v3.0: 모바일 '바로가기 추가' 버튼 축소 · 안내 문구와 한 줄

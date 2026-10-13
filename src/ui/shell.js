@@ -104,7 +104,7 @@ function renderTabBar() {
 function renderFooter() {
   $('#footer').innerHTML = `
     <div class="wrap">
-      <nav aria-label="이용 안내"><b>개인정보처리방침</b><span>신용정보활용체제</span><span>고객권리안내</span><span>금융소비자보호</span><span>보험사기신고</span><span>위법계약해지요구권</span><span>전자민원</span></nav>
+      <nav aria-label="이용 안내"><a href="${APP.links.privacyPolicy}" target="_blank" rel="noopener noreferrer">개인정보처리방침<span class="sr-only"> (새 창)</span></a><span>신용정보활용체제</span><span>고객권리안내</span><span>금융소비자보호</span><span>보험사기신고</span><span>위법계약해지요구권</span><span>전자민원</span></nav>
       <p>iM라이프생명보험(주) · 고객센터 1588-4770 (평일 09:00~18:00)</p>
       <p>본 화면은 「사이버창구 Web 메뉴정의서 ${APP.specVersion}」 기반 기획 검토용 프로토타입입니다. 표시 금액은 예시이며 실제 계약과 무관합니다.</p>
     </div>`;

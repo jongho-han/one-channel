@@ -112,7 +112,8 @@ main { min-height: 60vh; }
 footer { background: #fff; border-top: 1px solid var(--line); color: var(--sub); font-size: 13px; }
 footer .wrap { padding-block: 26px 40px; }
 footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 12px; }
-footer nav b { color: var(--navy); }
+footer nav a { font-weight: 700; color: var(--navy); text-decoration: none; }
+footer nav a:hover { text-decoration: underline; }
 footer p { margin: 2px 0; }
 
 
