@@ -54,3 +54,5 @@
 | 2026-10-14 15:22:47 | ARCHITECTURE.md 생성 | ARCHITECTURE.md 작성(전제·레이어 의존 방향·런타임 흐름·화면 정의 파이프라인·상태·폼 엔진·접근성·빌드/테스트/배포·확장 규칙·알려진 부채, 소스코드 미포함), README 참조 링크·MILESTONE 갱신 |
 | 2026-10-14 15:25:16 | architecture.md 에 프로젝트 구조 작성 (예시 트리 형태) | ARCHITECTURE.md 2절 「프로젝트 구조」 추가: 루트·docs·tests·src 하위 전 파일 트리 + 역할 주석, 이후 절 번호 조정 |
 | 2026-10-14 15:25:56 | main에 병합하고 push | ARCHITECTURE.md 커밋 후 main fast-forward 병합·push |
+| 2026-10-14 15:27:29 | architecture.md에 Clean Architecture 원칙 적용 작성 (예시 박스 다이어그램 형태) | ARCHITECTURE.md 4절 추가: Presentation·Application·Business Logic·Data 4계층 다이어그램(폴더 매핑), 원칙별 적용 방식 표, 실제 import 분석으로 확인한 역방향 참조 예외·해소 방안. 3절 문구·알려진 부채 보완, 절 번호 조정 |
+| 2026-10-14 15:28:01 | main에 병합하고 push | Clean Architecture 절 커밋 후 main fast-forward 병합·push |
