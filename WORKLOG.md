@@ -51,3 +51,6 @@
 | 2026-10-13 09:46:51 | main에 병합하고 push | main 직접 수정본(footerLinks 대괄호 문법 오류) 병합 충돌을 올바른 형태로 해결, analyze 0·테스트 9건 통과 후 main push |
 | 2026-10-13 10:04:18 | 보험계약관리 내 리스트 순서 변경 및 추가 (연금전환 사전신청 신규) | 보험계약관리 3Depth 11개 순서 변경, 명칭 「대리청구인 지정/등록」·「청약철회」, CH-11 연금전환 사전신청(T3: 종신보험 선택→전환 나이·연금 유형·지급 주기·계좌→예상 적립금·연금액 예시→동의→인증→접수, features/annuityConversion.js) 추가, 검색 키워드·menu-spec.json·메뉴정의서(행 순서·신규 행·화면 수·개정이력)·README·CLAUDE.md·MILESTONE 갱신, 테스트 1건 추가(전 화면 53). analyze 0·테스트 10건 통과 |
 | 2026-10-13 10:05:29 | main에 병합하고 push | 보험계약관리 순서·연금전환 사전신청 커밋 후 main fast-forward 병합·push |
+| 2026-10-14 15:22:47 | ARCHITECTURE.md 생성 | ARCHITECTURE.md 작성(전제·레이어 의존 방향·런타임 흐름·화면 정의 파이프라인·상태·폼 엔진·접근성·빌드/테스트/배포·확장 규칙·알려진 부채, 소스코드 미포함), README 참조 링크·MILESTONE 갱신 |
+| 2026-10-14 15:25:16 | architecture.md 에 프로젝트 구조 작성 (예시 트리 형태) | ARCHITECTURE.md 2절 「프로젝트 구조」 추가: 루트·docs·tests·src 하위 전 파일 트리 + 역할 주석, 이후 절 번호 조정 |
+| 2026-10-14 15:25:56 | main에 병합하고 push | ARCHITECTURE.md 커밋 후 main fast-forward 병합·push |
