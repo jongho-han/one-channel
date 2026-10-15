@@ -100,6 +100,15 @@ export const STEP_FLOWS = {
     warn: '연금소득은 연령에 따라 3.3%~5.5% 세율로 원천징수되며, 사적연금 연 1,500만원 초과 시 종합과세 또는 분리과세를 선택할 수 있습니다.',
     done: '연금 지급 신청이 완료되었습니다. 첫 연금은 연금개시일에 입금됩니다.', receiptPrefix: 'A2610' },
 
+  'PY-10': {
+    pick: { label: '연금으로 전환할 종신보험을 선택하세요', items: () => contractChoices(isConvertible, c => '적립금 ' + formatWon(c.surrender)) },
+    intro: { tone: 'info', title: '연금전환 사전신청이란', desc: '종신보험의 적립금을 원하는 나이에 연금으로 받도록 미리 신청하는 서비스입니다. 전환 예정일 30일 전에 다시 안내드리며, 그 전까지 변경·취소할 수 있습니다.' },
+    fields: ANNUITY_CONVERSION_FIELDS,
+    calc: annuityConversionCalc,
+    warn: '연금으로 전환되면 사망보장이 없어지거나 줄어들며, 전환 후에는 되돌릴 수 없습니다. 예상 금액은 공시이율 2.5% 가정 예시이며 확정된 금액이 아닙니다.',
+    agree: ['[필수] 연금 전환 시 사망보장이 소멸·감소됨을 확인했습니다.'],
+    done: '연금전환 사전신청이 접수되었습니다. 전환 예정일 30일 전에 알림톡으로 다시 안내드립니다.', receiptPrefix: 'H2610' },
+
   'PM-01': {
     pick: { label: '납입할 계약을 선택하세요', items: () => contractChoices(c => c.status === '정상' || c.status === '납입유예', c => formatWon(c.premium)) },
     fields: [
@@ -209,15 +218,6 @@ export const STEP_FLOWS = {
     calc: annuityOptionCalc,
     warn: '연금 개시 이후에는 연금 유형을 바꿀 수 없습니다. 예상 연금액은 현재 공시이율 기준 예시이며 확정된 금액이 아닙니다.',
     done: '연금개시유형 변경이 완료되었습니다.', receiptPrefix: 'H2610' },
-
-  'CH-11': {
-    pick: { label: '연금으로 전환할 종신보험을 선택하세요', items: () => contractChoices(isConvertible, c => '적립금 ' + formatWon(c.surrender)) },
-    intro: { tone: 'info', title: '연금전환 사전신청이란', desc: '종신보험의 적립금을 원하는 나이에 연금으로 받도록 미리 신청하는 서비스입니다. 전환 예정일 30일 전에 다시 안내드리며, 그 전까지 변경·취소할 수 있습니다.' },
-    fields: ANNUITY_CONVERSION_FIELDS,
-    calc: annuityConversionCalc,
-    warn: '연금으로 전환되면 사망보장이 없어지거나 줄어들며, 전환 후에는 되돌릴 수 없습니다. 예상 금액은 공시이율 2.5% 가정 예시이며 확정된 금액이 아닙니다.',
-    agree: ['[필수] 연금 전환 시 사망보장이 소멸·감소됨을 확인했습니다.'],
-    done: '연금전환 사전신청이 접수되었습니다. 전환 예정일 30일 전에 알림톡으로 다시 안내드립니다.', receiptPrefix: 'H2610' },
 
   'CH-10': {
     pick: { label: '계약을 선택하세요', items: () => contractChoices(() => true, c => '현재 수익자 ' + c.beneficiary) },

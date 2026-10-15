@@ -2,7 +2,7 @@ import { APP } from '../core/config.js';
 import { formatWon } from '../core/format.js';
 import { USER, contractByNo } from '../data/customerRepository.js';
 
-/* 연금전환 사전신청 (CH-11): 종신보험 적립금을 정한 나이에 연금으로 바꾸도록 미리 신청 */
+/* 연금전환 사전신청 (PY-10): 종신보험 적립금을 정한 나이에 연금으로 바꾸도록 미리 신청 */
 const CONVERSION_AGES = [55, 60, 65, 70];
 const ASSUMED_RATE = 0.025;   // 예시 적립 이율(공시이율 가정)
 /** 연금 유형별 [연간 지급 비율 계산] — 예시값 */

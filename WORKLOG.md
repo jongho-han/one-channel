@@ -56,3 +56,5 @@
 | 2026-10-14 15:25:56 | main에 병합하고 push | ARCHITECTURE.md 커밋 후 main fast-forward 병합·push |
 | 2026-10-14 15:27:29 | architecture.md에 Clean Architecture 원칙 적용 작성 (예시 박스 다이어그램 형태) | ARCHITECTURE.md 4절 추가: Presentation·Application·Business Logic·Data 4계층 다이어그램(폴더 매핑), 원칙별 적용 방식 표, 실제 import 분석으로 확인한 역방향 참조 예외·해소 방안. 3절 문구·알려진 부채 보완, 절 번호 조정 |
 | 2026-10-14 15:28:01 | main에 병합하고 push | Clean Architecture 절 커밋 후 main fast-forward 병합·push |
+| 2026-10-15 11:30:34 | 연금전환 사전신청 메뉴를 보험금청구/신청 내 연금 지급 신청 뒤로 이동 | 메뉴 이동·메뉴ID CH-11 → PY-10(업무코드 체계), menu-spec.json·stepFlows·검색 키워드·테스트·메뉴정의서(행 이동·비고·개정이력)·MILESTONE 갱신. analyze 0·테스트 10건 통과 |
+| 2026-10-15 11:31:00 | MAIN 병합 후 PUSH | 연금전환 사전신청 이동 커밋 후 main fast-forward 병합·push |
